@@ -8,6 +8,7 @@ public class Sonar : MonoBehaviour
 	public InputActionAsset inputActions;
 	public WristUI wristUI;
 	public GameObject sonarWave;
+	private LineRenderer lineRenderer;
 	public float sonarVelocity;
 
 	private InputAction shoot;
@@ -20,6 +21,8 @@ public class Sonar : MonoBehaviour
 		shoot.performed += ShootSonarWave;
 
 		wristUI = GameObject.Find("WristUICanvas").GetComponent<WristUI>();
+
+		lineRenderer = transform.parent.GetComponent<LineRenderer>();
 	}
 
 	void Update()
@@ -38,7 +41,7 @@ public class Sonar : MonoBehaviour
 	public void ShootSonarWave(InputAction.CallbackContext ctx)
 	{
 		// Get rotation resulting from 90 degree rotation around the x-axis over the parent's rotation
-		Quaternion rotation = Quaternion.Euler(90, 0, 0) * transform.parent.rotation;
+		Quaternion rotation = Quaternion.FromToRotation(Vector3.up, lineRenderer.GetPosition(1) - lineRenderer.GetPosition(0));
 
 		GameObject wave = Instantiate(sonarWave, transform.position, rotation);
 		wave.transform.localScale = new Vector3(wristUI.sonarRadiusValue * 0.1f, wave.transform.localScale.y, wristUI.sonarRadiusValue * 0.1f);
