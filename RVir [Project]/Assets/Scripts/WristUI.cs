@@ -15,6 +15,10 @@ public class WristUI : MonoBehaviour
 	private Canvas wristUICanvas;
 	private InputAction menuInputAction;
 	// --------------------------------------------------------------------------------------------
+	public int volumeValue;
+	private Slider volumeSlider;
+	private TMP_Text volumeText;
+	// --------------------------------------------------------------------------------------------
 	public int sonarRadiusValue;
 	private Slider sonarRadiusSlider;
 	private TMP_Text sonarRadiusText;
@@ -31,9 +35,13 @@ public class WristUI : MonoBehaviour
 		menuInputAction.Enable();
 		menuInputAction.performed += ToggleMenu;
 
-		sonarRadiusSlider = GetComponentInChildren<Slider>();
-		sonarRadiusValue = (int)sonarRadiusSlider.value;
+		volumeSlider = transform.GetChild(2).GetComponent<Slider>();
+		volumeValue = (int)volumeSlider.value;
+		volumeText = volumeSlider.transform.GetChild(3).GetChild(0).GetChild(0).GetComponent<TMP_Text>();
+		volumeText.SetText(volumeValue.ToString());
 
+		sonarRadiusSlider = transform.GetChild(3).GetComponent<Slider>();
+		sonarRadiusValue = (int)sonarRadiusSlider.value;
 		sonarRadiusText = sonarRadiusSlider.transform.GetChild(3).GetChild(0).GetChild(0).GetComponent<TMP_Text>();
 		sonarRadiusText.SetText(sonarRadiusValue.ToString());
 
@@ -49,6 +57,37 @@ public class WristUI : MonoBehaviour
 	public void ToggleMenu(InputAction.CallbackContext ctx)
 	{
 		wristUICanvas.enabled = !wristUICanvas.enabled;
+	}
+
+	public void updateVolume()
+	{
+		foreach (GameObject obj in GameObject.FindGameObjectsWithTag("PassiveSound"))
+		{
+			AudioSource audioSource = obj.GetComponent<AudioSource>();
+			audioSource.volume = volumeValue / (volumeSlider.maxValue - volumeSlider.minValue);
+		}
+	}
+
+	public void IncreaseVolume()
+	{
+		if (volumeValue < volumeSlider.maxValue)
+		{
+			volumeValue++;
+		}
+		volumeSlider.value = volumeValue;
+		volumeText.SetText(volumeValue.ToString());
+		updateVolume();
+	}
+
+	public void DecreaseVolume()
+	{
+		if (volumeValue > volumeSlider.minValue)
+		{
+			volumeValue--;
+		}
+		volumeSlider.value = volumeValue;
+		volumeText.SetText(volumeValue.ToString());
+		updateVolume();
 	}
 
 	public void IncreaseSonarRadius()

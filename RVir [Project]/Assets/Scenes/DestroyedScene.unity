@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.00031312954, g: 0.0006168248, b: 0.0014192763, a: 0.1}
+  m_IndirectSpecularColor: {r: 0.00031312995, g: 0.0006168241, b: 0.0014192759, a: 0.1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -70414,6 +70414,26 @@ PrefabInstance:
       value: WristUICanvas
       objectReference: {fileID: 0}
     - target: {fileID: 915139038505044824, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287561637416385546, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287561637416385546, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287561637416385546, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369889505580068574, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369889505580068574, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
