@@ -1007,10 +1007,10 @@
                 {
                     "name": "",
                     "id": "a8abb012-eb60-4e3e-80f2-857339ccc45c",
-                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "path": "<PXR_Controller>/primaryButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false

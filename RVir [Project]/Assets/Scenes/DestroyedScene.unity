@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.000313068, g: 0.00061691663, b: 0.0014243008, a: 0.1}
+  m_IndirectSpecularColor: {r: 0.00031312954, g: 0.0006168248, b: 0.0014192763, a: 0.1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -127,11 +127,6 @@ NavMeshSettings:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
   m_PrefabInstance: {fileID: 1885791655}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &204350166 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
-  m_PrefabInstance: {fileID: 1196731540}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &227098264
 GameObject:
@@ -237,6 +232,10 @@ PrefabInstance:
     - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_Name
       value: AudioSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
       objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
@@ -388,6 +387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioSource
       objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
+      objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -496,6 +499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioSource (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
+      objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -570,7 +577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -622,7 +629,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -640,14 +647,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.24184473, y: 0.66446304, z: -0.24184473, w: 0.66446304}
-  m_LocalPosition: {x: -18.14, y: 6.77, z: -11.2}
+  m_LocalRotation: {x: 0.4777144, y: 0.5213339, z: -0.4777144, w: 0.5213339}
+  m_LocalPosition: {x: -17.55, y: 10.33, z: -6.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 40, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 85, y: 90, z: 0}
 --- !u!1001 &798411424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -658,6 +665,10 @@ PrefabInstance:
     - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_Name
       value: AudioSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
       objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
@@ -808,6 +819,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioSource
       objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
+      objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -887,6 +902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioSource
       objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
+      objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -961,6 +980,10 @@ PrefabInstance:
     - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_Name
       value: AudioSource (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
       objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
@@ -1460,6 +1483,10 @@ PrefabInstance:
     - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_Name
       value: AudioSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
       objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
@@ -2036,6 +2063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioSource (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
+      objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2183,7 +2214,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307370421}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5, y: 1, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2191,7 +2222,7 @@ Transform:
   - {fileID: 526750708}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1307370428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2367,8 +2398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  wristUI: {fileID: 0}
   sonarWave: {fileID: 5539643749063033679, guid: 3bdc1f0941c8bae44834d4e33e894730, type: 3}
-  sonarVelocity: 700
+  sonarVelocity: 500
 --- !u!135 &1527079408
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2963,6 +2995,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioSource (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
+      objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3108,6 +3144,10 @@ PrefabInstance:
     - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_Name
       value: AudioSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
       objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
@@ -3288,6 +3328,10 @@ PrefabInstance:
     - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_Name
       value: AudioSource (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
       objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
@@ -3951,6 +3995,10 @@ PrefabInstance:
     - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
       objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
@@ -24151,7 +24199,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 808951038045665487}
-  - {fileID: 204350166}
+  - {fileID: 7647767277203432038}
   m_Father: {fileID: 808951036637199660}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -85, z: 0}
@@ -33114,7 +33162,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 823f8d5383d173a4fb4153a73427684f, type: 2}
+  - {fileID: 2100000, guid: 255352a35d6d72c4e8ee50bc826f7495, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70270,15 +70318,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 1550155520}
     m_Modifications:
     - target: {fileID: 915139037201100951, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 915139037201100951, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 915139037201100951, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
-      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 915139037205976358, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
@@ -70369,17 +70409,9 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1173827750}
-    - target: {fileID: 915139037205976360, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 915139037205976363, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
       propertyPath: m_Name
       value: WristUICanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 915139038505044824, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 915139038505044824, guid: 0225326689d4cfd4bbe934706e2c3849, type: 3}
       propertyPath: m_AnchorMax.y
@@ -72249,6 +72281,10 @@ PrefabInstance:
     - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_Name
       value: AudioSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+      propertyPath: m_TagString
+      value: PassiveSound
       objectReference: {fileID: 0}
     - target: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_RootOrder
@@ -74872,6 +74908,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!4 &7647767277203432038 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+  m_PrefabInstance: {fileID: 1196731540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!33 &7652953022532150815
 MeshFilter:
   m_ObjectHideFlags: 0

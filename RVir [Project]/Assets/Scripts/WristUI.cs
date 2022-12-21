@@ -7,11 +7,15 @@ using UnityEngine.UI;
 
 public class WristUI : MonoBehaviour
 {
+	private Color GREEN = new Color(130, 200, 125, 1);
+	private Color RED = new Color(200, 125, 125, 1);
+	private bool passiveSoundEnabled = true;
+	// --------------------------------------------------------------------------------------------
 	public InputActionAsset inputActions;
 	private Canvas wristUICanvas;
 	private InputAction menuInputAction;
 	// --------------------------------------------------------------------------------------------
-	private int sonarRadiusValue;
+	public int sonarRadiusValue;
 	private Slider sonarRadiusSlider;
 	private TMP_Text sonarRadiusText;
 	// --------------------------------------------------------------------------------------------
@@ -30,10 +34,11 @@ public class WristUI : MonoBehaviour
 		sonarRadiusSlider = GetComponentInChildren<Slider>();
 		sonarRadiusValue = (int)sonarRadiusSlider.value;
 
-		sonarRadiusText = sonarRadiusSlider.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<TMP_Text>();
+		sonarRadiusText = sonarRadiusSlider.transform.GetChild(3).GetChild(0).GetChild(0).GetComponent<TMP_Text>();
 		sonarRadiusText.SetText(sonarRadiusValue.ToString());
 
 		lightsObject = GameObject.Find("Lighting");
+		lightsObject.SetActive(false);
 	}
 
 	void OnDestroy()
@@ -48,7 +53,7 @@ public class WristUI : MonoBehaviour
 
 	public void IncreaseSonarRadius()
 	{
-		if (sonarRadiusValue < 10)
+		if (sonarRadiusValue < sonarRadiusSlider.maxValue)
 		{
 			sonarRadiusValue++;
 		}
@@ -58,7 +63,7 @@ public class WristUI : MonoBehaviour
 
 	public void DecreaseSonarRadius()
 	{
-		if (sonarRadiusValue > 0)
+		if (sonarRadiusValue > sonarRadiusSlider.minValue)
 		{
 			sonarRadiusValue--;
 		}
@@ -70,5 +75,20 @@ public class WristUI : MonoBehaviour
 	{
 		lightsObject.SetActive(!lightsObject.activeSelf);
 	}
+
+	public void TogglePassiveSound(GameObject buttonObject)
+	{
+		passiveSoundEnabled = !passiveSoundEnabled;
+		Image buttonImage = buttonObject.GetComponent<Image>();
+		buttonImage.color = passiveSoundEnabled ? GREEN : RED;
+		foreach (GameObject obj in GameObject.FindGameObjectsWithTag("PassiveSound"))
+		{
+			Debug.Log("Passive sound enabled for " + obj.name);
+			AudioSource audioSource = obj.GetComponent<AudioSource>();
+			audioSource.enabled = passiveSoundEnabled;
+			if (passiveSoundEnabled) audioSource.Play();
+		}
+	}
+
 
 }
