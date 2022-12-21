@@ -469,10 +469,10 @@
                 {
                     "name": "",
                     "id": "c4b29a88-a6c1-495c-a9d5-1a7c6b59400e",
-                    "path": "<XRController>{LeftHand}/menuButton",
+                    "path": "<PXR_Controller>{LeftHand}/secondaryButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
