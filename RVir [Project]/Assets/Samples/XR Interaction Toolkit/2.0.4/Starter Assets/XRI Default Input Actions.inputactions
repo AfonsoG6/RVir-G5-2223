@@ -469,7 +469,7 @@
                 {
                     "name": "",
                     "id": "c4b29a88-a6c1-495c-a9d5-1a7c6b59400e",
-                    "path": "<PXR_Controller>{LeftHand}/secondaryButton",
+                    "path": "<XRController>{LeftHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",

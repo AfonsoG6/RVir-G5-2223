@@ -13,6 +13,8 @@ public class Sonar : MonoBehaviour
 
 	private InputAction shoot;
 
+	public InputActionReference shootRef;
+
 	void Start()
 	{
 		shoot = inputActions.FindActionMap("XRI RightHand Interaction").FindAction("Shoot");

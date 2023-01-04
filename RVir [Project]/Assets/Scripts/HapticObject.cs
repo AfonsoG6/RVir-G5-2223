@@ -2,14 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [System.Serializable]
 public class Haptic
 {
+    [Range(0.1f, 10)]
     public float duration;
 
-    public void TriggerHaptic(XRController controller, float intensity)
+    public void TriggerHaptic(XRBaseController controller, float intensity)
     {
         if (intensity > 0)
         {
@@ -20,9 +22,12 @@ public class Haptic
 
 public class HapticObject : MonoBehaviour
 {
-    XRController rightController;
+    [SerializeField]
+    ActionBasedController rightController;
+    [SerializeField]
+    ActionBasedController leftController;
 
-    XRController leftController;
+    public InputActionReference actionRef;
 
     public Haptic onDistance;
 
@@ -30,30 +35,29 @@ public class HapticObject : MonoBehaviour
 
     void Awake()
     {
-        rightController = GameObject.Find("RightHand Controller").GetComponent<XRController>();
-        leftController = GameObject.Find("LeftHand Controller").GetComponent<XRController>();
+        rightController ??= GameObject.Find("RightHand Controller").GetComponent<ActionBasedController>();
+        leftController ??= GameObject.Find("LeftHand Controller").GetComponent<ActionBasedController>();
     }
 
     void Update()
     {
-        //float distanceToRight = Vector3.Distance(transform.position, rightController.transform.position);
-        //float distanceToLeft = Vector3.Distance(transform.position, leftController.transform.position);
+        float distanceToRight = Vector3.Distance(transform.position, rightController.transform.position);
+        float distanceToLeft = Vector3.Distance(transform.position, leftController.transform.position);
 
-        //float scaledDistanceToLeft = Mathf.InverseLerp(0, maxDistance, distanceToLeft);
 
-        onDistance.TriggerHaptic(leftController, 1);
-        /*
         if (distanceToLeft < maxDistance)
         {
-            
+            float scaledDistanceToLeft = Mathf.InverseLerp(0, maxDistance, distanceToLeft);
+
+            onDistance.TriggerHaptic(leftController, 1 - (scaledDistanceToLeft * scaledDistanceToLeft));
         }
 
         if (distanceToRight <= maxDistance)
         {
             float scaledDistanceToRight = Mathf.InverseLerp(0, maxDistance, distanceToRight);
 
-            onDistance.TriggerHaptic(rightController, 1 - scaledDistanceToRight);
+            onDistance.TriggerHaptic(rightController, 1 - (scaledDistanceToRight * scaledDistanceToRight));
         }
-        */
+
     }
 }
