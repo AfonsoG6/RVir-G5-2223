@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.00031312995, g: 0.0006168241, b: 0.0014192759, a: 0.1}
+  m_IndirectSpecularColor: {r: 0.0003121385, g: 0.0006166831, b: 0.0014193937, a: 0.1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13497,6 +13497,7 @@ GameObject:
   - component: {fileID: 808951036762165678}
   - component: {fileID: 808951036762165673}
   - component: {fileID: 808951036762165672}
+  - component: {fileID: 808951036762165679}
   m_Layer: 0
   m_Name: Lamp_Floor_01
   m_TagString: Untagged
@@ -13531,6 +13532,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808951036762165674}
   m_Mesh: {fileID: 162615797639628805, guid: 7a1dd57bd8b6ca44cbf5f922801b2975, type: 3}
+--- !u!114 &808951036762165679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808951036762165674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933af373a22193b40af0a8f122c08949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDistance:
+    duration: 0.5
+  maxDistance: 5
 --- !u!1 &808951036762687536
 GameObject:
   m_ObjectHideFlags: 0
@@ -34729,7 +34745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &808951037438016029
 Transform:
   m_ObjectHideFlags: 0
@@ -44455,7 +44471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &808951037715812201
 Transform:
   m_ObjectHideFlags: 0
