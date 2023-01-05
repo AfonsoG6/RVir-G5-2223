@@ -46,7 +46,7 @@ public class WristUI : MonoBehaviour
 		sonarRadiusText.SetText(sonarRadiusValue.ToString());
 
 		lightsObject = GameObject.Find("Lighting");
-		//lightsObject.SetActive(false);
+		lightsObject.SetActive(false);
 	}
 
 	void OnDestroy()
