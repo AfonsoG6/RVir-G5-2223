@@ -300,6 +300,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
   m_PrefabInstance: {fileID: 256823317}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &316080949 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7777544877141036169, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+  m_PrefabInstance: {fileID: 1885791655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &319196956
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +488,11 @@ Transform:
   m_Father: {fileID: 1307370425}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &656267165 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7777544877141036169, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+  m_PrefabInstance: {fileID: 256823317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,9 +818,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
   m_PrefabInstance: {fileID: 908405547}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &908405550 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7777544877141036169, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+  m_PrefabInstance: {fileID: 908405547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &916644916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+  m_PrefabInstance: {fileID: 341829289}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &916644918 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7777544877141036169, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
   m_PrefabInstance: {fileID: 341829289}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &924424695
@@ -953,6 +973,16 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
   m_PrefabInstance: {fileID: 3475150811439519992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1130144842 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7777544877141036169, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+  m_PrefabInstance: {fileID: 3475150811439519992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1141374733 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7777544877141036169, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+  m_PrefabInstance: {fileID: 1038009976}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1165955469
 GameObject:
@@ -2845,6 +2875,11 @@ Transform:
   m_Father: {fileID: 808951037519042017}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1852027429 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7777544877141036169, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+  m_PrefabInstance: {fileID: 798411424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1867067793
 Transform:
   m_ObjectHideFlags: 0
@@ -13217,10 +13252,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightController: {fileID: 1223485118}
   leftController: {fileID: 1550155524}
-  actionRef: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  source: {fileID: 908405550}
   onDistance:
     duration: 1
-  maxDistance: 5
+  maxDistance: 3
 --- !u!114 &808951036762165680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15165,6 +15200,7 @@ GameObject:
   - component: {fileID: 808951036819556251}
   - component: {fileID: 808951036819556250}
   - component: {fileID: 808951036819556229}
+  - component: {fileID: 808951036819556253}
   m_Layer: 0
   m_Name: BarCabinet_Apt_01_Filled
   m_TagString: Obstacle
@@ -15262,6 +15298,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHead: {fileID: 1173827747}
   audioSource: {fileID: 256823318}
+--- !u!114 &808951036819556253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808951036819556231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933af373a22193b40af0a8f122c08949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 1223485118}
+  leftController: {fileID: 1550155524}
+  source: {fileID: 656267165}
+  onDistance:
+    duration: 1
+  maxDistance: 3
 --- !u!1 &808951036820507792
 GameObject:
   m_ObjectHideFlags: 0
@@ -23970,6 +24024,7 @@ GameObject:
   - component: {fileID: 808951037093387728}
   - component: {fileID: 808951037093387742}
   - component: {fileID: 808951037093387731}
+  - component: {fileID: 808951037093387743}
   m_Layer: 0
   m_Name: Table_Side_Apt_01
   m_TagString: Obstacle
@@ -23991,6 +24046,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHead: {fileID: 1173827747}
   audioSource: {fileID: 7647767277203432038}
+--- !u!114 &808951037093387743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808951037093387741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933af373a22193b40af0a8f122c08949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 1223485118}
+  leftController: {fileID: 1550155524}
+  source: {fileID: 7647767277203432040}
+  onDistance:
+    duration: 1
+  maxDistance: 3
 --- !u!4 &808951037094665288
 Transform:
   m_ObjectHideFlags: 0
@@ -41957,6 +42030,8 @@ GameObject:
   - component: {fileID: 808951037666220000}
   - component: {fileID: 808951037666220003}
   - component: {fileID: 808951037666220002}
+  - component: {fileID: 808951037666220015}
+  - component: {fileID: 808951037666220014}
   m_Layer: 0
   m_Name: Table_Side_Apt_01 (1)
   m_TagString: Obstacle
@@ -41981,6 +42056,38 @@ Transform:
   m_Father: {fileID: 808951036637199660}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &808951037666220014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808951037666220012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655caf1034caf0849b19a00dadc5a218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHead: {fileID: 1173827747}
+  audioSource: {fileID: 1130144840}
+--- !u!114 &808951037666220015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808951037666220012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933af373a22193b40af0a8f122c08949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 1223485118}
+  leftController: {fileID: 1550155524}
+  source: {fileID: 1130144842}
+  onDistance:
+    duration: 1
+  maxDistance: 3
 --- !u!1 &808951037666432816
 GameObject:
   m_ObjectHideFlags: 0
@@ -43607,6 +43714,7 @@ GameObject:
   - component: {fileID: 808951037705477497}
   - component: {fileID: 808951037705477504}
   - component: {fileID: 808951037705477505}
+  - component: {fileID: 808951037705477506}
   m_Layer: 0
   m_Name: MediaTable_01
   m_TagString: Obstacle
@@ -43691,6 +43799,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8947742, y: 0.81535, z: 2.7289414}
   m_Center: {x: 0.0063353786, y: 0.40767494, z: -0.0000009536743}
+--- !u!114 &808951037705477506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808951037705477499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933af373a22193b40af0a8f122c08949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 1223485118}
+  leftController: {fileID: 1550155524}
+  source: {fileID: 316080949}
+  onDistance:
+    duration: 1
+  maxDistance: 3
 --- !u!1 &808951037707482809
 GameObject:
   m_ObjectHideFlags: 0
@@ -53036,6 +53162,7 @@ GameObject:
   - component: {fileID: 808951037981799180}
   - component: {fileID: 808951037981799183}
   - component: {fileID: 808951037981799184}
+  - component: {fileID: 808951037981799185}
   m_Layer: 0
   m_Name: Sofa_Apt_01
   m_TagString: Obstacle
@@ -53137,6 +53264,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHead: {fileID: 1173827747}
   audioSource: {fileID: 916644916}
+--- !u!114 &808951037981799185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808951037981799177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933af373a22193b40af0a8f122c08949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 1223485118}
+  leftController: {fileID: 1550155524}
+  source: {fileID: 916644918}
+  onDistance:
+    duration: 1
+  maxDistance: 3
 --- !u!1 &808951037984125993
 GameObject:
   m_ObjectHideFlags: 0
@@ -54078,6 +54223,7 @@ GameObject:
   - component: {fileID: 808951038001138520}
   - component: {fileID: 808951038001138518}
   - component: {fileID: 808951038001138521}
+  - component: {fileID: 808951038001138522}
   m_Layer: 0
   m_Name: Shelf_Apt_01
   m_TagString: Obstacle
@@ -54192,6 +54338,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.77954924, y: 3.608799, z: 2.1255667}
   m_Center: {x: 0.053075895, y: 1.8043993, z: -0.00000011920929}
+--- !u!114 &808951038001138522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808951038001138512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933af373a22193b40af0a8f122c08949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 1223485118}
+  leftController: {fileID: 1550155524}
+  source: {fileID: 1852027429}
+  onDistance:
+    duration: 0
+  maxDistance: 0
 --- !u!33 &808951038004450320
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -54270,6 +54434,7 @@ GameObject:
   - component: {fileID: 808951038004450334}
   - component: {fileID: 808951038004450322}
   - component: {fileID: 808951038004450335}
+  - component: {fileID: 808951038004450336}
   m_Layer: 0
   m_Name: Coffee_Table_Apt_01
   m_TagString: Obstacle
@@ -54321,6 +54486,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0200473, y: 0.7229656, z: 1.9476091}
   m_Center: {x: -0.00000047683716, y: 0.36148274, z: 0.00000047683716}
+--- !u!114 &808951038004450336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808951038004450332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933af373a22193b40af0a8f122c08949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 1223485118}
+  leftController: {fileID: 1550155524}
+  source: {fileID: 1141374733}
+  onDistance:
+    duration: 1
+  maxDistance: 3
 --- !u!1 &808951038027491616
 GameObject:
   m_ObjectHideFlags: 0
@@ -74852,6 +75035,11 @@ MeshRenderer:
 --- !u!4 &7647767277203432038 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
+  m_PrefabInstance: {fileID: 1196731540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7647767277203432040 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7777544877141036169, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
   m_PrefabInstance: {fileID: 1196731540}
   m_PrefabAsset: {fileID: 0}
 --- !u!33 &7652953022532150815

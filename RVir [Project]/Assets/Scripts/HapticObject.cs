@@ -26,8 +26,8 @@ public class HapticObject : MonoBehaviour
     ActionBasedController rightController;
     [SerializeField]
     ActionBasedController leftController;
-
-    public InputActionReference actionRef;
+    [SerializeField]
+    AudioSource source;
 
     public Haptic onDistance;
 
@@ -41,8 +41,8 @@ public class HapticObject : MonoBehaviour
 
     void Update()
     {
-        float distanceToRight = Vector3.Distance(transform.position, rightController.transform.position);
-        float distanceToLeft = Vector3.Distance(transform.position, leftController.transform.position);
+        float distanceToRight = Vector3.Distance(source.transform.position, rightController.transform.position);
+        float distanceToLeft = Vector3.Distance(source.transform.position, leftController.transform.position);
 
 
         if (distanceToLeft < maxDistance)
