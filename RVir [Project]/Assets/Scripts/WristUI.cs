@@ -59,6 +59,11 @@ public class WristUI : MonoBehaviour
         }
     }
 
+	private void OnDestroy()
+	{
+        menuToggleRef.action.performed -= ToggleMenu;
+    }
+
 	public void ToggleMenu(InputAction.CallbackContext ctx)
 	{
 		wristUICanvas.enabled = !wristUICanvas.enabled;
@@ -118,6 +123,7 @@ public class WristUI : MonoBehaviour
 	public void ToggleLights()
 	{
 		lightsObject.SetActive(!lightsObject.activeSelf);
+		directionalLight.SetActive(!directionalLight.activeSelf);
 	}
 
 	public void TogglePassiveSound(GameObject buttonObject)

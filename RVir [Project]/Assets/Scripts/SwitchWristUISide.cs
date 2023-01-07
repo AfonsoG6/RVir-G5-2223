@@ -1,7 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+// Just an extension method for the Transform class. Syntactic sugar.
+public static class SwitchExtensions
+{
+    public static void reparentTo(this Transform original, Transform target)
+    {
+        Vector3 localPosition = original.transform.localPosition;
+        Quaternion localRotation = original.transform.localRotation;
+        original.parent = target;
+        original.localPosition = localPosition;
+        original.localRotation = localRotation;
+    }
+}
 
 public class SwitchWristUISide : MonoBehaviour
 {
@@ -13,6 +27,10 @@ public class SwitchWristUISide : MonoBehaviour
     WristUI wristUI;
     [SerializeField]
     Sonar spawnPoint;
+    [SerializeField]
+    InputActionReference leftButton;
+    [SerializeField]
+    InputActionReference rightButton;
 
     void Awake()
     {
@@ -24,21 +42,19 @@ public class SwitchWristUISide : MonoBehaviour
 
     public void SwitchSideToRight()
     {
-        wristUI.gameObject.transform.parent = rightController.transform;
-        spawnPoint.gameObject.transform.parent = leftController.transform;
-        SwitchInputActions();
+        wristUI.transform.reparentTo(rightController.transform);
+        spawnPoint.transform.reparentTo(leftController.transform);
+
+        if (rightButton != null) wristUI.SetInputAction(rightButton);
+        if (leftButton != null) spawnPoint.SetInputAction(leftButton);
     }
 
     public void SwicthSideToLeft()
     {
-        wristUI.gameObject.transform.parent = leftController.transform;
-        spawnPoint.gameObject.transform.parent = rightController.transform;
-        SwitchInputActions();
-    }
+        wristUI.transform.reparentTo(leftController.transform);
+        spawnPoint.transform.reparentTo(rightController.transform);
 
-    private void SwitchInputActions()
-    {
-        wristUI.SetInputAction(spawnPoint.shootRef);
-        spawnPoint.SetInputAction(wristUI.menuToggleRef);
+        if (leftButton != null) wristUI.SetInputAction(leftButton);
+        if (rightButton != null) spawnPoint.SetInputAction(rightButton);
     }
 }

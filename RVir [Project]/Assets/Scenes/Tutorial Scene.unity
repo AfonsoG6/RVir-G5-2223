@@ -1521,6 +1521,8 @@ MonoBehaviour:
   leftController: {fileID: 2007495525}
   wristUI: {fileID: 1116670047}
   spawnPoint: {fileID: 446328580}
+  leftButton: {fileID: 3100268133277980345, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightButton: {fileID: -1452875350539080452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &546067745
 GameObject:
   m_ObjectHideFlags: 0
