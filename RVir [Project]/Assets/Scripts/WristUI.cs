@@ -11,7 +11,9 @@ public class WristUI : MonoBehaviour
 	private Color GREEN = new Color(130, 200, 125, 1);
 	private Color RED = new Color(200, 125, 125, 1);
 	private bool passiveSoundEnabled = true;
+	private bool helperRingEnabled = true;
 	// --------------------------------------------------------------------------------------------
+	public InputActionAsset inputActions;
 	private Canvas wristUICanvas;
 	public InputActionReference menuToggleRef;
 	// --------------------------------------------------------------------------------------------
@@ -22,6 +24,8 @@ public class WristUI : MonoBehaviour
 	public int sonarRadiusValue;
 	private Slider sonarRadiusSlider;
 	private TMP_Text sonarRadiusText;
+	// --------------------------------------------------------------------------------------------
+	private GameObject helperRingObject;
 	// --------------------------------------------------------------------------------------------
 	private GameObject lightsObject;
 	private GameObject directionalLight;
@@ -43,26 +47,28 @@ public class WristUI : MonoBehaviour
 		sonarRadiusText = sonarRadiusSlider.transform.GetChild(3).GetChild(0).GetChild(0).GetComponent<TMP_Text>();
 		sonarRadiusText.SetText(sonarRadiusValue.ToString());
 
-        // If we're in the tutorial scene, then turn on the lights
-        string sceneName = SceneManager.GetActiveScene().name;
+		// If we're in the tutorial scene, then turn on the lights
+		string sceneName = SceneManager.GetActiveScene().name;
 
 		directionalLight = GameObject.Find("Directional Light");
 		directionalLight.SetActive(false);
 
-        lightsObject = GameObject.Find("Lighting");
+		lightsObject = GameObject.Find("Lighting");
 		lightsObject.SetActive(false);
 
-        if (sceneName == "Tutorial Scene")
-        {
+		helperRingObject = GameObject.Find("ProximityRingManager");
+
+		if (sceneName == "Tutorial Scene")
+		{
 			directionalLight.SetActive(true);
-            lightsObject.SetActive(true);
-        }
-    }
+			lightsObject.SetActive(true);
+		}
+	}
 
 	private void OnDestroy()
 	{
-        menuToggleRef.action.performed -= ToggleMenu;
-    }
+		menuToggleRef.action.performed -= ToggleMenu;
+	}
 
 	public void ToggleMenu(InputAction.CallbackContext ctx)
 	{
@@ -120,6 +126,11 @@ public class WristUI : MonoBehaviour
 		sonarRadiusText.SetText(sonarRadiusValue.ToString());
 	}
 
+	public void ResetLevel()
+	{
+		GameObject.Find("LevelManager").GetComponent<LevelManager>().startLevel();
+	}
+
 	public void ToggleLights()
 	{
 		lightsObject.SetActive(!lightsObject.activeSelf);
@@ -131,6 +142,7 @@ public class WristUI : MonoBehaviour
 		passiveSoundEnabled = !passiveSoundEnabled;
 		Image buttonImage = buttonObject.GetComponent<Image>();
 		buttonImage.color = passiveSoundEnabled ? GREEN : RED;
+
 		foreach (GameObject obj in GameObject.FindGameObjectsWithTag("PassiveSound"))
 		{
 			Debug.Log("Passive sound enabled for " + obj.name);
@@ -138,6 +150,15 @@ public class WristUI : MonoBehaviour
 			audioSource.enabled = passiveSoundEnabled;
 			if (passiveSoundEnabled) audioSource.Play();
 		}
+	}
+
+	public void ToggleProximityRing(GameObject buttonObject)
+	{
+		helperRingEnabled = !helperRingEnabled;
+		Image buttonImage = buttonObject.GetComponent<Image>();
+		buttonImage.color = helperRingEnabled ? RED : GREEN;
+
+		helperRingObject.SetActive(helperRingEnabled);
 	}
 
 	public void Subscribe()
@@ -149,19 +170,19 @@ public class WristUI : MonoBehaviour
 
 	public void Unsubscribe()
 	{
-        if (menuToggleRef == null) return;
-        menuToggleRef.action.performed -= ToggleMenu;
-    }
+		if (menuToggleRef == null) return;
+		menuToggleRef.action.performed -= ToggleMenu;
+	}
 
-    void OnEnable()
-    {
-        Subscribe();
-    }
+	void OnEnable()
+	{
+		Subscribe();
+	}
 
-    void OnDisable()
-    {
-        Unsubscribe();
-    }
+	void OnDisable()
+	{
+		Unsubscribe();
+	}
 
 	public void SetInputAction(InputActionReference newActionRef)
 	{
@@ -171,4 +192,6 @@ public class WristUI : MonoBehaviour
 		menuToggleRef = newActionRef;
 		Subscribe();
 	}
+
+
 }
