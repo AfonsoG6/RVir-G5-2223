@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 // Just an extension method for the Transform class. Syntactic sugar.
 public static class SwitchExtensions
@@ -31,6 +32,12 @@ public class SwitchWristUISide : MonoBehaviour
     InputActionReference leftButton;
     [SerializeField]
     InputActionReference rightButton;
+    [SerializeField]
+    Image controllerImage;
+    [SerializeField]
+    Sprite left;
+    [SerializeField]
+    Sprite right;
 
     void Awake()
     {
@@ -47,6 +54,8 @@ public class SwitchWristUISide : MonoBehaviour
 
         if (rightButton != null) wristUI.SetInputAction(rightButton);
         if (leftButton != null) spawnPoint.SetInputAction(leftButton);
+
+        controllerImage.sprite = right;
     }
 
     public void SwicthSideToLeft()
@@ -56,5 +65,7 @@ public class SwitchWristUISide : MonoBehaviour
 
         if (leftButton != null) wristUI.SetInputAction(leftButton);
         if (rightButton != null) spawnPoint.SetInputAction(rightButton);
+
+        controllerImage.sprite = left;
     }
 }

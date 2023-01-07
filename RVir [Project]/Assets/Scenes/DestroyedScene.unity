@@ -2202,7 +2202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd9d91ffd1bb4f4aa6015610e827a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputActions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   wristUI: {fileID: 0}
   sonarWave: {fileID: 5539643749063033679, guid: 3bdc1f0941c8bae44834d4e33e894730, type: 3}
   sonarVelocity: 500
@@ -13198,7 +13197,7 @@ MonoBehaviour:
   source: {fileID: 908405550}
   onDistance:
     duration: 1
-  maxDistance: 3
+  maxDistance: 1.5
 --- !u!114 &808951036762165680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15258,7 +15257,7 @@ MonoBehaviour:
   source: {fileID: 656267165}
   onDistance:
     duration: 1
-  maxDistance: 3
+  maxDistance: 1.5
 --- !u!1 &808951036820507792
 GameObject:
   m_ObjectHideFlags: 0
@@ -24006,7 +24005,7 @@ MonoBehaviour:
   source: {fileID: 7647767277203432040}
   onDistance:
     duration: 1
-  maxDistance: 3
+  maxDistance: 1.5
 --- !u!4 &808951037094665288
 Transform:
   m_ObjectHideFlags: 0
@@ -42030,7 +42029,7 @@ MonoBehaviour:
   source: {fileID: 1130144842}
   onDistance:
     duration: 1
-  maxDistance: 3
+  maxDistance: 1.5
 --- !u!1 &808951037666432816
 GameObject:
   m_ObjectHideFlags: 0
@@ -43759,7 +43758,7 @@ MonoBehaviour:
   source: {fileID: 316080949}
   onDistance:
     duration: 1
-  maxDistance: 3
+  maxDistance: 1.5
 --- !u!1 &808951037707482809
 GameObject:
   m_ObjectHideFlags: 0
@@ -53224,7 +53223,7 @@ MonoBehaviour:
   source: {fileID: 916644918}
   onDistance:
     duration: 1
-  maxDistance: 3
+  maxDistance: 1.5
 --- !u!1 &808951037984125993
 GameObject:
   m_ObjectHideFlags: 0
@@ -54297,8 +54296,8 @@ MonoBehaviour:
   leftController: {fileID: 1550155524}
   source: {fileID: 1852027429}
   onDistance:
-    duration: 0
-  maxDistance: 0
+    duration: 1
+  maxDistance: 1.5
 --- !u!33 &808951038004450320
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -54446,7 +54445,7 @@ MonoBehaviour:
   source: {fileID: 1141374733}
   onDistance:
     duration: 1
-  maxDistance: 3
+  maxDistance: 1.5
 --- !u!1 &808951038027491616
 GameObject:
   m_ObjectHideFlags: 0
