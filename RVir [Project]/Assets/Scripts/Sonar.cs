@@ -5,24 +5,16 @@ using UnityEngine.InputSystem;
 
 public class Sonar : MonoBehaviour
 {
-	public InputActionAsset inputActions;
 	public WristUI wristUI;
 	public GameObject sonarWave;
 	private LineRenderer lineRenderer;
 	public float sonarVelocity;
 
-	private InputAction shoot;
-
 	public InputActionReference shootRef;
 
 	void Start()
 	{
-		shoot = inputActions.FindActionMap("XRI RightHand Interaction").FindAction("Shoot");
-
-		shoot.Enable();
-		shoot.performed += ShootSonarWave;
-
-		wristUI = GameObject.Find("WristUICanvas").GetComponent<WristUI>();
+		wristUI ??= GameObject.Find("WristUICanvas").GetComponent<WristUI>();
 
 		lineRenderer = transform.parent.GetComponent<LineRenderer>();
 	}
@@ -37,7 +29,7 @@ public class Sonar : MonoBehaviour
 
 	void OnDestroy()
 	{
-		shoot.performed -= ShootSonarWave;
+		shootRef.action.performed -= ShootSonarWave;
 	}
 
 	public void ShootSonarWave(InputAction.CallbackContext ctx)
@@ -49,4 +41,36 @@ public class Sonar : MonoBehaviour
 		wave.transform.localScale = new Vector3(wristUI.sonarRadiusValue * 0.1f, wave.transform.localScale.y, wristUI.sonarRadiusValue * 0.1f);
 		wave.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, sonarVelocity, 0));
 	}
+
+    public void Subscribe()
+    {
+        if (shootRef == null) return;
+        shootRef.action.Enable();
+        shootRef.action.performed += ShootSonarWave;
+    }
+
+    public void Unsubscribe()
+    {
+        if (shootRef == null) return;
+        shootRef.action.performed -= ShootSonarWave;
+    }
+
+    void OnEnable()
+    {
+        Subscribe();
+    }
+
+    void OnDisable()
+    {
+        Unsubscribe();
+    }
+
+    public void SetInputAction(InputActionReference newActionRef)
+    {
+        if (newActionRef == null || shootRef == newActionRef) return;
+
+        Unsubscribe();
+        shootRef = newActionRef;
+        Subscribe();
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WristUI : MonoBehaviour
@@ -11,9 +12,8 @@ public class WristUI : MonoBehaviour
 	private Color RED = new Color(200, 125, 125, 1);
 	private bool passiveSoundEnabled = true;
 	// --------------------------------------------------------------------------------------------
-	public InputActionAsset inputActions;
 	private Canvas wristUICanvas;
-	private InputAction menuInputAction;
+	public InputActionReference menuToggleRef;
 	// --------------------------------------------------------------------------------------------
 	public int volumeValue;
 	private Slider volumeSlider;
@@ -24,6 +24,7 @@ public class WristUI : MonoBehaviour
 	private TMP_Text sonarRadiusText;
 	// --------------------------------------------------------------------------------------------
 	private GameObject lightsObject;
+	private GameObject directionalLight;
 	// --------------------------------------------------------------------------------------------
 
 
@@ -31,9 +32,6 @@ public class WristUI : MonoBehaviour
 	{
 		wristUICanvas = GetComponent<Canvas>();
 		wristUICanvas.enabled = false;
-		menuInputAction = inputActions.FindActionMap("XRI LeftHand Interaction").FindAction("Menu");
-		menuInputAction.Enable();
-		menuInputAction.performed += ToggleMenu;
 
 		volumeSlider = transform.GetChild(2).GetComponent<Slider>();
 		volumeValue = (int)volumeSlider.value;
@@ -45,14 +43,21 @@ public class WristUI : MonoBehaviour
 		sonarRadiusText = sonarRadiusSlider.transform.GetChild(3).GetChild(0).GetChild(0).GetComponent<TMP_Text>();
 		sonarRadiusText.SetText(sonarRadiusValue.ToString());
 
-		lightsObject = GameObject.Find("Lighting");
-		//lightsObject.SetActive(false);
-	}
+        // If we're in the tutorial scene, then turn on the lights
+        string sceneName = SceneManager.GetActiveScene().name;
 
-	void OnDestroy()
-	{
-		menuInputAction.performed -= ToggleMenu;
-	}
+		directionalLight = GameObject.Find("Directional Light");
+		directionalLight.SetActive(false);
+
+        lightsObject = GameObject.Find("Lighting");
+		lightsObject.SetActive(false);
+
+        if (sceneName == "Tutorial Scene")
+        {
+			directionalLight.SetActive(true);
+            lightsObject.SetActive(true);
+        }
+    }
 
 	public void ToggleMenu(InputAction.CallbackContext ctx)
 	{
@@ -129,5 +134,35 @@ public class WristUI : MonoBehaviour
 		}
 	}
 
+	public void Subscribe()
+	{
+		if (menuToggleRef == null) return;
+		menuToggleRef.action.Enable();
+		menuToggleRef.action.performed += ToggleMenu;
+	}
 
+	public void Unsubscribe()
+	{
+        if (menuToggleRef == null) return;
+        menuToggleRef.action.performed -= ToggleMenu;
+    }
+
+    void OnEnable()
+    {
+        Subscribe();
+    }
+
+    void OnDisable()
+    {
+        Unsubscribe();
+    }
+
+	public void SetInputAction(InputActionReference newActionRef)
+	{
+		if (newActionRef == null || menuToggleRef == newActionRef) return;
+
+		Unsubscribe();
+		menuToggleRef = newActionRef;
+		Subscribe();
+	}
 }
