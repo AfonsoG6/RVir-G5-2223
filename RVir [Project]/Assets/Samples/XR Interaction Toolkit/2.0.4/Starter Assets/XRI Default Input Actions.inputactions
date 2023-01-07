@@ -1007,7 +1007,7 @@
                 {
                     "name": "",
                     "id": "a8abb012-eb60-4e3e-80f2-857339ccc45c",
-                    "path": "<PXR_Controller>/primaryButton",
+                    "path": "<XRController>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",

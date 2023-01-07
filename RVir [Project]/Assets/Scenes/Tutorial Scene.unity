@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd9d91ffd1bb4f4aa6015610e827a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wristUI: {fileID: 0}
+  wristUI: {fileID: 1116670047}
   sonarWave: {fileID: 5539643749063033679, guid: 3bdc1f0941c8bae44834d4e33e894730, type: 3}
   sonarVelocity: 500
   shootRef: {fileID: -1452875350539080452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
