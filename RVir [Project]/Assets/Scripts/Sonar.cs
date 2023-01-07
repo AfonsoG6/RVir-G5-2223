@@ -25,6 +25,12 @@ public class Sonar : MonoBehaviour
 		{
 			ShootSonarWave(new InputAction.CallbackContext());
 		}
+
+		LineRenderer newLineRenderer = transform.parent.GetComponent<LineRenderer>();
+		if(lineRenderer != newLineRenderer)
+		{
+			lineRenderer = newLineRenderer;
+		}
 	}
 
 	void OnDestroy()
