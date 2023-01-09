@@ -1952,7 +1952,7 @@ GameObject:
   - component: {fileID: 1307370432}
   - component: {fileID: 1307370431}
   - component: {fileID: 1307370433}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: XR Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3639,7 +3639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6271883487900934693, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
       propertyPath: m_IsActive
