@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &132602904
 GameObject:
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 139192650}
   m_Layer: 0
   m_Name: BarCabinet_Apt_01 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   source: {fileID: 284193356}
   onDistance:
     duration: 1
-  maxDistance: 1
+  maxDistance: 1.5
 --- !u!65 &139192651
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -396,7 +396,7 @@ Transform:
   - {fileID: 1255870240}
   - {fileID: 284193357}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
 --- !u!1 &221360679
 GameObject:
@@ -1813,7 +1813,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443221601}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1877,11 +1877,11 @@ Transform:
   m_GameObject: {fileID: 443221601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 35}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &446328578
 GameObject:
@@ -2251,7 +2251,7 @@ RectTransform:
   - {fileID: 737441489}
   - {fileID: 540491418}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2323,7 +2323,11 @@ MonoBehaviour:
 
     Notice that the closer your
     controller is to the obstacle, the harder it will vibrate. That vibration is
-    unique to each controller.'
+    unique to each controller.
+
+
+    (Normal obstacles have both the passive sound
+    and the proximity detection)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2350,8 +2354,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
-  m_fontSizeBase: 0.6
+  m_fontSize: 0.51
+  m_fontSizeBase: 0.51
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2618,7 +2622,7 @@ Transform:
   m_Children:
   - {fileID: 1035301878}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &546067745
 GameObject:
@@ -2704,7 +2708,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1384270637}
         m_TargetAssemblyTypeName: SwitchWristUISide, Assembly-CSharp
         m_MethodName: SwicthSideToLeft
         m_Mode: 1
@@ -3040,7 +3044,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 135, y: -180, z: 0}
 --- !u!1 &737441488
 GameObject:
@@ -3157,7 +3161,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &803053581
 GameObject:
@@ -3500,7 +3504,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &921669296
 PrefabInstance:
@@ -3515,7 +3519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9003417335845753540, guid: 88eb65b4dea685a4cad7ad664104b001, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9003417335845753540, guid: 88eb65b4dea685a4cad7ad664104b001, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3951,7 +3955,7 @@ RectTransform:
   - {fileID: 1569525398}
   - {fileID: 979115956}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4182,13 +4186,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003543062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 50}
+  m_LocalPosition: {x: 0, y: 1.5, z: 49.36}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1365811956}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1035301877
 GameObject:
@@ -4221,6 +4225,7 @@ Transform:
   - {fileID: 1940136925}
   - {fileID: 2007495526}
   - {fileID: 242297241}
+  - {fileID: 1290427798}
   m_Father: {fileID: 544032443}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4339,7 +4344,7 @@ RectTransform:
   - {fileID: 350615043}
   - {fileID: 449314247}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4462,7 +4467,7 @@ RectTransform:
   - {fileID: 221360680}
   - {fileID: 356376497}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4887,7 +4892,7 @@ Transform:
   - {fileID: 936708267}
   - {fileID: 353832913}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1172585993
 PrefabInstance:
@@ -5147,6 +5152,68 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.060000002, y: 0.1972804, z: 0.76}
   m_Center: {x: 0.3, y: 1.3484166, z: 9.341716e-15}
+--- !u!1001 &1290427797
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1035301878}
+    m_Modifications:
+    - target: {fileID: 7987973994024226342, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_Name
+      value: ProximityRingManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+--- !u!4 &1290427798 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9060898231806338745, guid: 6dc0d332e9f7da044896236b40a11a67, type: 3}
+  m_PrefabInstance: {fileID: 1290427797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1305666443
 GameObject:
   m_ObjectHideFlags: 0
@@ -5439,6 +5506,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7647767278330941170, guid: 68415e2fb6afd32468a0a7be124f7311, type: 3}
   m_PrefabInstance: {fileID: 1365811955}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1384270636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1384270638}
+  - component: {fileID: 1384270637}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1384270637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384270636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4efd429c98db3c248b263f13be8be413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 242297240}
+  leftController: {fileID: 2007495525}
+  wristUI: {fileID: 1116670047}
+  spawnPoint: {fileID: 446328580}
+  leftButton: {fileID: 3100268133277980345, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightButton: {fileID: -1452875350539080452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  controllerImage: {fileID: 979115957}
+  left: {fileID: 21300000, guid: d96b6f9d5046d3348a654a9240f7bbbf, type: 3}
+  right: {fileID: 21300000, guid: bf594175912ca9f438f409be7b077d0d, type: 3}
+--- !u!4 &1384270638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384270636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1388030216
 GameObject:
   m_ObjectHideFlags: 0
@@ -5554,7 +5674,7 @@ RectTransform:
   - {fileID: 1906666923}
   - {fileID: 1398613440}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5619,10 +5739,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "From this point onward you'll start to hear the objective. \nIt has a
-    more pronunciated sound than all the obsctales and you're able to hear it anywhere
-    at the same volume.\n\nYou'll finish this tutorial and all the subsequent scenarios
-    when you find it and grab it."
+  m_text: 'If you go ahead, you''ll start to hear the objective at some point. Pay
+    special attention to it''s sound, you''ll need to memorize it so you can reach
+    it.
+
+
+    It has a more pronunciated sound than all the obstacles and you''re
+    able to hear it at a higher volume.
+
+
+    You''ll finish this tutorial and all
+    the subsequent scenarios when you find it and grab it.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5649,8 +5776,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.9
+  m_fontSizeBase: 0.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6544,7 +6671,7 @@ RectTransform:
   - {fileID: 546067746}
   - {fileID: 1463452506}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7860,7 +7987,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1384270637}
         m_TargetAssemblyTypeName: SwitchWristUISide, Assembly-CSharp
         m_MethodName: SwitchSideToRight
         m_Mode: 1
@@ -8222,7 +8349,7 @@ Transform:
   - {fileID: 7595908708752098323}
   - {fileID: 1172585994}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 120, z: 0}
 --- !u!4 &3453720634712493467
 Transform:
@@ -8356,7 +8483,7 @@ GameObject:
   - component: {fileID: 8895706528270418802}
   m_Layer: 0
   m_Name: BarCabinet_Apt_01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

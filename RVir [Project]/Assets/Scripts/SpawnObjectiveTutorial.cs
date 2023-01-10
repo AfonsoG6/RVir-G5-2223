@@ -6,12 +6,12 @@ public class SpawnObjectiveTutorial : MonoBehaviour
 {
     public GameObject objective;
 
-    void Start()
+    void Awake()
     {
         objective.SetActive(false);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
         objective.SetActive(true);
     }

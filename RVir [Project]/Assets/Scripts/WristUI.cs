@@ -13,7 +13,6 @@ public class WristUI : MonoBehaviour
 	private bool passiveSoundEnabled = true;
 	private bool helperRingEnabled = true;
 	// --------------------------------------------------------------------------------------------
-	public InputActionAsset inputActions;
 	private Canvas wristUICanvas;
 	public InputActionReference menuToggleRef;
 	// --------------------------------------------------------------------------------------------

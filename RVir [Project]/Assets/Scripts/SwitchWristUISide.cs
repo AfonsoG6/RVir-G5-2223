@@ -55,7 +55,7 @@ public class SwitchWristUISide : MonoBehaviour
         if (rightButton != null) wristUI.SetInputAction(rightButton);
         if (leftButton != null) spawnPoint.SetInputAction(leftButton);
 
-        controllerImage.sprite = right;
+        controllerImage.sprite = left;
     }
 
     public void SwicthSideToLeft()
@@ -66,6 +66,6 @@ public class SwitchWristUISide : MonoBehaviour
         if (leftButton != null) wristUI.SetInputAction(leftButton);
         if (rightButton != null) spawnPoint.SetInputAction(rightButton);
 
-        controllerImage.sprite = left;
+        controllerImage.sprite = right;
     }
 }
