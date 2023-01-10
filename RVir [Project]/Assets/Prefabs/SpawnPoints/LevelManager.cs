@@ -71,8 +71,15 @@ public class LevelManager : MonoBehaviour
 		// for each possible room value, create a new list of spawn points
 		foreach (Room room in System.Enum.GetValues(typeof(Room)))
 		{
-			userSpawnPoints.Add(room, new List<Vector3>());
-			objectiveSpawnPoints.Add(room, new List<Vector3>());
+			if (userSpawnPoints.ContainsKey(room))
+				userSpawnPoints[room].Clear();
+			else
+				userSpawnPoints.Add(room, new List<Vector3>());
+
+			if (objectiveSpawnPoints.ContainsKey(room))
+				objectiveSpawnPoints[room].Clear();
+			else
+				objectiveSpawnPoints.Add(room, new List<Vector3>());
 		}
 
 		foreach (GameObject spObj in GameObject.FindGameObjectsWithTag("SpawnPoint"))
