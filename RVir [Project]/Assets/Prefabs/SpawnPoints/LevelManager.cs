@@ -125,10 +125,6 @@ public class LevelManager : MonoBehaviour
 			objectiveRoom++;
 		}
 
-		// For testing purposes, set the user and objective to be in these rooms
-		userRoom = Room.Entrance;
-		objectiveRoom = Room.Livingroom;
-
 		// Select a random spawn point from the user's room
 		Vector3 userSpawnPoint = userSpawnPoints[userRoom][Random.Range(0, userSpawnPoints[userRoom].Count)];
 		// Select a random spawn point from the objective's room
@@ -138,9 +134,11 @@ public class LevelManager : MonoBehaviour
 
 		// Spawn the user and objective
 		transform.position = userSpawnPoint;
-		GameObject.Find("Objective").transform.position = objectiveSpawnPoint;
+		GameObject obj = GameObject.Find("Objective");
+		obj.transform.position = objectiveSpawnPoint;
+		obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-		// Set y rotation of child object to random multiple of 10 value
+		// Set y rotation of camera to random multiple of 10 degrees
 		transform.GetChild(0).transform.localRotation = Quaternion.Euler(0, Random.Range(0, 36) * 10, 0);
 	}
 }
