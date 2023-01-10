@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -34,12 +35,30 @@ public class LevelManager : MonoBehaviour
 		}
 	}
 
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		if (scene.buildIndex != 0)
+		{
+			collectSpawnPoints();
+			startLevel();
+		}
+	}
+
+	void OnEnable()
+	{
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	void OnDisable()
+	{
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+	}
+
 	public void ObjectiveAchieved()
 	{
 		if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)
 		{
 			UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-			collectSpawnPoints();
 		}
 		else
 		{
@@ -56,8 +75,9 @@ public class LevelManager : MonoBehaviour
 			objectiveSpawnPoints.Add(room, new List<Vector3>());
 		}
 
-		foreach (SpawnPoint spawnPoint in FindObjectsOfType<SpawnPoint>())
+		foreach (GameObject spObj in GameObject.FindGameObjectsWithTag("SpawnPoint"))
 		{
+			SpawnPoint spawnPoint = spObj.GetComponent<SpawnPoint>();
 			if (spawnPoint.getType() == SpawnPoint.Type.User)
 			{
 				Vector3 spawnPointPosition = spawnPoint.transform.position;
@@ -68,6 +88,7 @@ public class LevelManager : MonoBehaviour
 			{
 				objectiveSpawnPoints[spawnPoint.getRoom()].Add(spawnPoint.transform.position);
 			}
+			Debug.Log("Collected Spawn point in room " + spawnPoint.getRoom() + " of type " + spawnPoint.getType() + " at " + spawnPoint.transform.position);
 			// Deactivate the spawn point
 			spawnPoint.gameObject.SetActive(false);
 		}
