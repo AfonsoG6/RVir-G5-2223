@@ -62,7 +62,8 @@ public class ProximityRingManager : MonoBehaviour
 		closestPoint.y = transform.position.y;
 
 		float distanceRatio = Vector3.Distance(transform.position, closestPoint) / radius;
-		disc.Thickness = 0.1f * (1 - distanceRatio);
+		if (distanceRatio < 0.05) disc.Thickness = 0f;
+		else disc.Thickness = 0.1f * (1 - distanceRatio);
 
 		Vector3 direction = closestPoint - transform.position;
 

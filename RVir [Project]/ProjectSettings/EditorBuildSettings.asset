@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial Scene.unity
     guid: 4578fa1f284e12a4591002347c3e629f
   - enabled: 1
-    path: Assets/Scenes/DestroyedScene.unity
+    path: Assets/Scenes/Main Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 834132ec02e2c27448cee3146ce913d3, type: 2}

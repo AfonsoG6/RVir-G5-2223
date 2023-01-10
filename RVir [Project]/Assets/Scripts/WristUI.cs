@@ -50,10 +50,10 @@ public class WristUI : MonoBehaviour
 		string sceneName = SceneManager.GetActiveScene().name;
 
 		directionalLight = GameObject.Find("Directional Light");
-		directionalLight.SetActive(false);
+		if (directionalLight != null) directionalLight.SetActive(false);
 
 		lightsObject = GameObject.Find("Lighting");
-		lightsObject.SetActive(false);
+		if (lightsObject != null) lightsObject.SetActive(false);
 
 		helperRingObject = GameObject.Find("ProximityRingManager");
 
@@ -127,13 +127,16 @@ public class WristUI : MonoBehaviour
 
 	public void ResetLevel()
 	{
-		GameObject.Find("LevelManager").GetComponent<LevelManager>().startLevel();
+		GameObject obj = GameObject.Find("XR Origin");
+		if (!obj) obj = GameObject.Find("XR Origin (Persistent)");
+
+		obj.GetComponent<LevelManager>().startLevel();
 	}
 
 	public void ToggleLights()
 	{
-		lightsObject.SetActive(!lightsObject.activeSelf);
-		directionalLight.SetActive(!directionalLight.activeSelf);
+		if (lightsObject != null) lightsObject.SetActive(!lightsObject.activeSelf);
+		if (directionalLight != null) directionalLight.SetActive(!directionalLight.activeSelf);
 	}
 
 	public void TogglePassiveSound(GameObject buttonObject)
