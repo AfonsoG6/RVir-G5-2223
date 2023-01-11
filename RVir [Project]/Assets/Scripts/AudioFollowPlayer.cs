@@ -4,47 +4,64 @@ using UnityEngine;
 
 public class AudioFollowPlayer : MonoBehaviour
 {
-    public Transform playerHead;
-    public Transform audioSource;
-    public Transform audioSourceHaptic;
+	public Transform playerHead;
+	public Transform audioSource;
+	public Transform audioSourceHaptic;
 
-    private void Start()
-    {
-        playerHead = GameObject.Find("Main Camera").transform;
-        audioSource = gameObject.transform.Find("AudioSource");
-        audioSourceHaptic = gameObject.transform.Find("AudioSourceHaptic");
+	private void Start()
+	{
+		playerHead = GameObject.Find("Main Camera").transform;
+		audioSource = gameObject.transform.Find("AudioSource");
+		if (audioSource == null) audioSource = gameObject.transform.Find("AudioSource(Clone)");
+		audioSourceHaptic = gameObject.transform.Find("AudioSourceHaptic");
+		if (audioSourceHaptic == null) audioSourceHaptic = gameObject.transform.Find("AudioSourceHaptic(Clone)");
 
-    }
+	}
 
-    void Update()
-    {
-        PositionAudioClosestToPlayer();
-    }
+	void Update()
+	{
+		PositionAudioClosestToPlayer();
+	}
 
-    public void PositionAudioClosestToPlayer()
-    {
-        
-        Collider collider = GetComponent<BoxCollider>();
-        if (transform.name == "Objective") collider = GetComponent<SphereCollider>();
+	public void PositionAudioClosestToPlayer()
+	{
 
-        Vector3 bestCandidate = collider.ClosestPoint(playerHead.position);
-        float bestDistance = Vector3.Distance(playerHead.position, bestCandidate);
+		Collider collider = GetComponent<Collider>();
 
-        List<BoxCollider> childColliders = new List<BoxCollider>(GetComponentsInChildren<BoxCollider>());
+		Vector3 bestCandidate = Vector3.zero;
+		float bestDistance = float.MaxValue;
 
-        foreach (var col in childColliders)
-        {
-            var candidate = col.ClosestPoint(playerHead.position);
-            var distance = Vector3.Distance(playerHead.position, candidate);
-            if (distance < bestDistance)
-            {
-                bestDistance = distance;
-                bestCandidate = candidate;
-            }
+		if (collider != null && (collider is BoxCollider
+					|| collider is SphereCollider
+					|| collider is CapsuleCollider
+					|| (collider is MeshCollider && ((MeshCollider)collider).convex)))
+		{
+			bestCandidate = collider.ClosestPoint(playerHead.position);
+			bestDistance = Vector3.Distance(playerHead.position, bestCandidate);
+		}
 
-        }
+		List<Collider> childColliders = new List<Collider>(GetComponentsInChildren<Collider>());
 
-        audioSource.position = bestCandidate;
-        audioSourceHaptic.position = bestCandidate;
-    }
+		foreach (var col in childColliders)
+		{
+			if (!(collider is BoxCollider
+					|| collider is SphereCollider
+					|| collider is CapsuleCollider
+					|| (collider is MeshCollider && ((MeshCollider)collider).convex)))
+				continue;
+			var candidate = col.ClosestPoint(playerHead.position);
+			var distance = Vector3.Distance(playerHead.position, candidate);
+			if (distance < bestDistance)
+			{
+				bestDistance = distance;
+				bestCandidate = candidate;
+			}
+
+		}
+
+		if (bestDistance == float.MaxValue) return;
+
+		audioSource.position = bestCandidate;
+		audioSourceHaptic.position = bestCandidate;
+	}
 }

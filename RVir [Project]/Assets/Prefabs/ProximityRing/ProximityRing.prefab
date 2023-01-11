@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dd51d29965c9d04599a2fdc8a833c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blendMode: 0
+  blendMode: 1
   scaleMode: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   detailLevel: 2
   renderQueue: -1
-  zTest: 4
+  zTest: 8
   zOffsetFactor: 0
   zOffsetUnits: 0
   colorMask: 15
@@ -112,7 +112,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 222ec55c548324845b1dd960be702323, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

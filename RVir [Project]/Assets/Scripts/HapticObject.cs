@@ -35,16 +35,18 @@ public class HapticObject : MonoBehaviour
 
 	void Start()
 	{
-		source = transform.Find("AudioSourceHaptic").GetComponent<AudioSource>();
+		Transform sourceTransform = transform.Find("AudioSourceHaptic");
+		if (source == null) sourceTransform = transform.Find("AudioSourceHaptic(Clone)");
+		source = sourceTransform.GetComponent<AudioSource>();
 		rightController = GameObject.Find("RightHand Controller").GetComponent<ActionBasedController>();
 		leftController = GameObject.Find("LeftHand Controller").GetComponent<ActionBasedController>();
+		if (onDistance == null) onDistance = new Haptic();
 	}
 
 	void Update()
 	{
 		float distanceToRight = Vector3.Distance(source.transform.position, rightController.transform.position);
 		float distanceToLeft = Vector3.Distance(source.transform.position, leftController.transform.position);
-
 
 		if (distanceToLeft <= maxDistance)
 		{
