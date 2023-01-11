@@ -45,7 +45,7 @@ public class HapticObject : MonoBehaviour
 		float distanceToLeft = Vector3.Distance(source.transform.position, leftController.transform.position);
 
 
-		if (distanceToLeft < maxDistance)
+		if (distanceToLeft <= maxDistance)
 		{
 			float scaledDistanceToLeft = Mathf.InverseLerp(0, maxDistance, distanceToLeft);
 

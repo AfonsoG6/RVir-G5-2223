@@ -8,6 +8,7 @@ TagManager:
   - PassiveSound
   - Wave
   - SpawnPoint
+  - HapticSound
   layers:
   - Default
   - TransparentFX

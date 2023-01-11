@@ -70,7 +70,7 @@ public class LevelManager : MonoBehaviour
 
 	private void spawnAudioObjects()
 	{
-		GameObject audioSourcePrefab = Resources.Load<GameObject>("AudioSource");
+		GameObject audioSourcePrefab = Resources.Load<GameObject>("Prefabs/AudioSource");
 		foreach (GameObject obstacle in GameObject.FindGameObjectsWithTag("Obstacle"))
 		{
 			if (obstacle.GetComponentInChildren<AudioSource>()) continue;

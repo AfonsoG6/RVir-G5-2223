@@ -13,7 +13,7 @@ public class AudioObject : MonoBehaviour
 	void Start()
 	{
 		audioSource = GetComponent<AudioSource>();
-		CustomizeAudioSource();
+		if (transform.parent.name != "Objective") CustomizeAudioSource();
 		StartCoroutine(PlayAudio());
 	}
 
