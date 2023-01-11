@@ -38,7 +38,7 @@ public class AudioObject : MonoBehaviour
 	public void CustomizeAudioSource()
 	{
 		// Change delay and audio source pitch depending on the object's material
-		Material mat = GetComponent<Renderer>().material;
+		Material mat = transform.parent.GetComponent<MeshRenderer>().materials[0];
 		delay = HashMaterialIntoDelay(mat);
 		audioSource.pitch = HashMaterialIntoPitch(mat);
 	}
