@@ -81,7 +81,13 @@ public class WristUI : MonoBehaviour
 			AudioSource audioSource = obj.GetComponent<AudioSource>();
 			audioSource.volume = volumeValue / (volumeSlider.maxValue - volumeSlider.minValue);
 		}
-	}
+
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("HapticSound"))
+        {
+            AudioSource audioSource = obj.GetComponent<AudioSource>();
+            audioSource.volume = volumeValue / (volumeSlider.maxValue - volumeSlider.minValue);
+        }
+    }
 
 	public void IncreaseVolume()
 	{

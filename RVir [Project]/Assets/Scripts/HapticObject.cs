@@ -9,7 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Haptic
 {
 	[Range(0.1f, 10)]
-	public float duration;
+	public float duration = 1f;
 
 	public void TriggerHaptic(XRBaseController controller, float intensity)
 	{
@@ -31,7 +31,7 @@ public class HapticObject : MonoBehaviour
 
 	public Haptic onDistance;
 
-	public float maxDistance;
+	public float maxDistance = 1.5f;
 
 	void Start()
 	{
