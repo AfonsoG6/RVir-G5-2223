@@ -35,6 +35,7 @@ public class HapticObject : MonoBehaviour
 
 	void Start()
 	{
+		source = transform.Find("AudioSourceHaptic").GetComponent<AudioSource>();
 		rightController = GameObject.Find("RightHand Controller").GetComponent<ActionBasedController>();
 		leftController = GameObject.Find("LeftHand Controller").GetComponent<ActionBasedController>();
 	}
