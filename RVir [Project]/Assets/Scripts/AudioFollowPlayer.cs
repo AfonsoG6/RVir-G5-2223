@@ -23,8 +23,9 @@ public class AudioFollowPlayer : MonoBehaviour
 
     public void PositionAudioClosestToPlayer()
     {
-
-        BoxCollider collider = GetComponent<BoxCollider>();
+        
+        Collider collider = GetComponent<BoxCollider>();
+        if (transform.name == "Objective") collider = GetComponent<SphereCollider>();
 
         Vector3 bestCandidate = collider.ClosestPoint(playerHead.position);
         float bestDistance = Vector3.Distance(playerHead.position, bestCandidate);

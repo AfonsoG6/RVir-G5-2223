@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0031312993, g: 0.0061682407, b: 0.014192758, a: 1}
+  m_IndirectSpecularColor: {r: 0.003121385, g: 0.0061668307, b: 0.014193937, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,7 +132,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1828125210877563649, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828125210877563649, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
+      propertyPath: maxDistance
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9075186164026731944, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
       propertyPath: m_RootOrder
@@ -181,6 +185,10 @@ PrefabInstance:
     - target: {fileID: 9075186164026731945, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
       propertyPath: m_Name
       value: AudioSourceHaptic
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075186164026731945, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9075186164026731951, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
       propertyPath: Loop
@@ -3195,7 +3203,7 @@ GameObject:
   - component: {fileID: 688301854}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4426,6 +4434,8 @@ GameObject:
   - component: {fileID: 1003543064}
   - component: {fileID: 1003543063}
   - component: {fileID: 1003543069}
+  - component: {fileID: 1003543071}
+  - component: {fileID: 1003543070}
   m_Layer: 6
   m_Name: Objective
   m_TagString: Obstacle
@@ -4669,6 +4679,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f2c27c0e2259841a1dd527ae107d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1003543070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003543062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933af373a22193b40af0a8f122c08949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 242297245}
+  leftController: {fileID: 2007495530}
+  source: {fileID: 1833129725}
+  onDistance:
+    duration: 1
+  maxDistance: 1.5
+--- !u!114 &1003543071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003543062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655caf1034caf0849b19a00dadc5a218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHead: {fileID: 0}
+  audioSource: {fileID: 7647767277507259393}
+  audioSourceHaptic: {fileID: 1833129723}
 --- !u!1 &1035301877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5314,7 +5357,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157996717}
-  - component: {fileID: 1157996716}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -5322,27 +5364,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1157996716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157996715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4efd429c98db3c248b263f13be8be413, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightController: {fileID: 242297240}
-  leftController: {fileID: 2007495525}
-  wristUI: {fileID: 1116670047}
-  spawnPoint: {fileID: 446328580}
-  leftButton: {fileID: 3100268133277980345, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rightButton: {fileID: -1452875350539080452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  controllerImage: {fileID: 979115957}
-  left: {fileID: 21300000, guid: d96b6f9d5046d3348a654a9240f7bbbf, type: 3}
-  right: {fileID: 21300000, guid: bf594175912ca9f438f409be7b077d0d, type: 3}
 --- !u!4 &1157996717
 Transform:
   m_ObjectHideFlags: 0
@@ -7192,6 +7213,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9075186164026731944, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
   m_PrefabInstance: {fileID: 1833129722}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1833129725 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9075186164026731951, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
+  m_PrefabInstance: {fileID: 1833129722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1854522105
 GameObject:
   m_ObjectHideFlags: 0
@@ -8553,6 +8579,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1828125210877563649, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
+      propertyPath: maxDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9075186164026731944, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8604,6 +8634,10 @@ PrefabInstance:
     - target: {fileID: 9075186164026731951, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
       propertyPath: Loop
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075186164026731951, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
+      propertyPath: MaxDistance
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcfb5ee3012f1eb4cb569c9710fc0517, type: 3}
@@ -9186,6 +9220,7 @@ GameObject:
   - component: {fileID: 6374088243265354768}
   - component: {fileID: 8895706528270418803}
   - component: {fileID: 8895706528270418804}
+  - component: {fileID: 8895706528270418805}
   m_Layer: 0
   m_Name: BarCabinet_Apt_01
   m_TagString: Obstacle
@@ -9425,7 +9460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHead: {fileID: 1940136925}
   audioSource: {fileID: 1172585994}
-  audioSourceHaptic: {fileID: 4421976}
+  audioSourceHaptic: {fileID: 1172585994}
 --- !u!65 &8895706528270418804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9439,3 +9474,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.74937534, y: 1.5538093, z: 0.97244453}
   m_Center: {x: 0.017882347, y: 0.77690464, z: -0.000000044703484}
+--- !u!114 &8895706528270418805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6381209340604976044}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933af373a22193b40af0a8f122c08949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 0}
+  leftController: {fileID: 0}
+  source: {fileID: 0}
+  onDistance:
+    duration: 0
+  maxDistance: 0

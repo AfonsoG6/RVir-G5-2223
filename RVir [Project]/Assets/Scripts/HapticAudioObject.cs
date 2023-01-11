@@ -36,7 +36,6 @@ public class HapticAudioObject : MonoBehaviour
         while(true)
         {
             audioSource.PlayOneShot(audioSource.clip);
-            Debug.Log("choo" + delay);
             yield return new WaitForSeconds(delay);
         }
 
