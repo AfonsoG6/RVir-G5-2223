@@ -26,6 +26,7 @@ public class WristUI : MonoBehaviour
 	// --------------------------------------------------------------------------------------------
 	private GameObject helperRingObject;
 	// --------------------------------------------------------------------------------------------
+	private bool lightsOn = false;
 	private GameObject lightsObject;
 	private GameObject directionalLight;
 	// --------------------------------------------------------------------------------------------
@@ -50,10 +51,9 @@ public class WristUI : MonoBehaviour
 		string sceneName = SceneManager.GetActiveScene().name;
 
 		directionalLight = GameObject.Find("Directional Light");
-		if (directionalLight != null) directionalLight.SetActive(false);
-
+		if (directionalLight != null) directionalLight.SetActive(lightsOn);
 		lightsObject = GameObject.Find("Lighting");
-		if (lightsObject != null) lightsObject.SetActive(false);
+		if (lightsObject != null) lightsObject.SetActive(lightsOn);
 
 		helperRingObject = GameObject.Find("ProximityRingManager");
 
@@ -135,6 +135,7 @@ public class WristUI : MonoBehaviour
 
 	public void ToggleLights()
 	{
+
 		if (lightsObject != null) lightsObject.SetActive(!lightsObject.activeSelf);
 		if (directionalLight != null) directionalLight.SetActive(!directionalLight.activeSelf);
 	}
@@ -163,17 +164,30 @@ public class WristUI : MonoBehaviour
 		helperRingObject.SetActive(helperRingEnabled);
 	}
 
+	public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		if (scene.name == "Main Scene")
+		{
+			directionalLight = GameObject.Find("Directional Light");
+			if (directionalLight != null) directionalLight.SetActive(lightsOn);
+			lightsObject = GameObject.Find("Lighting");
+			if (lightsObject != null) lightsObject.SetActive(lightsOn);
+		}
+	}
+
 	public void Subscribe()
 	{
 		if (menuToggleRef == null) return;
 		menuToggleRef.action.Enable();
 		menuToggleRef.action.performed += ToggleMenu;
+		SceneManager.sceneLoaded += OnSceneLoaded;
 	}
 
 	public void Unsubscribe()
 	{
 		if (menuToggleRef == null) return;
 		menuToggleRef.action.performed -= ToggleMenu;
+		SceneManager.sceneLoaded -= OnSceneLoaded;
 	}
 
 	void OnEnable()

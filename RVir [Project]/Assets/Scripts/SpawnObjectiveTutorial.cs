@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class SpawnObjectiveTutorial : MonoBehaviour
 {
-    public GameObject objective;
+	public Vector3 originalPosition;
+	public GameObject objective;
 
-    void Awake()
-    {
-        objective.SetActive(false);
-    }
+	void Start()
+	{
+		originalPosition = objective.transform.position;
+		objective.transform.position = new Vector3(originalPosition.x, originalPosition.y + 100, originalPosition.z);
+		objective.GetComponent<Rigidbody>().useGravity = false;
+	}
 
-    void OnTriggerEnter(Collider other)
-    {
-        objective.SetActive(true);
-    }
+	void OnTriggerEnter(Collider other)
+	{
+		objective.GetComponent<Rigidbody>().useGravity = true;
+		objective.transform.position = originalPosition;
+	}
 }
