@@ -12,8 +12,9 @@ public class AudioObject : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		StartCoroutine(PlayAudio());
 		audioSource = GetComponent<AudioSource>();
+		CustomizeAudioSource();
+		StartCoroutine(PlayAudio());
 	}
 
 	IEnumerator PlayAudio()
@@ -25,11 +26,40 @@ public class AudioObject : MonoBehaviour
 	// Use if we want the delay after the sonar wave hits the object
 	IEnumerator PlayAudioOnce()
 	{
-        yield return new WaitForSeconds(delay);
-        audioSource.PlayOneShot(audioSource.clip);
-    }
+		yield return new WaitForSeconds(delay);
+		audioSource.PlayOneShot(audioSource.clip);
+	}
 
-	public void PlayAudioOnceOnCollision() {
-        audioSource.PlayOneShot(audioSource.clip);
-    }
+	public void PlayAudioOnceOnCollision()
+	{
+		audioSource.PlayOneShot(audioSource.clip);
+	}
+
+	public void CustomizeAudioSource()
+	{
+		// Change delay and audio source pitch depending on the object's material
+		Material mat = GetComponent<Renderer>().material;
+		delay = HashMaterialIntoDelay(mat);
+		audioSource.pitch = HashMaterialIntoPitch(mat);
+	}
+
+	public float HashMaterialIntoPitch(Material mat)
+	{
+		int hash = 0;
+		foreach (char c in mat.name)
+		{
+			hash += c * 137;
+		}
+		return ((hash % 200) - 100) / 100f;
+	}
+
+	public float HashMaterialIntoDelay(Material mat)
+	{
+		int hash = 0;
+		foreach (char c in mat.name)
+		{
+			hash += c * 137;
+		}
+		return (hash % 100) / 100f;
+	}
 }

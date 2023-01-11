@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 		gameObject.name += " (Persistent)";
 		// If current scene is not called "Tutorial Scene", then collect spawn points and start level
+		spawnAudioObjects();
 		if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 0)
 		{
 			collectSpawnPoints();
@@ -39,6 +40,7 @@ public class LevelManager : MonoBehaviour
 	{
 		if (scene.buildIndex != 0)
 		{
+			spawnAudioObjects();
 			collectSpawnPoints();
 			startLevel();
 		}
@@ -63,6 +65,17 @@ public class LevelManager : MonoBehaviour
 		else
 		{
 			startLevel();
+		}
+	}
+
+	private void spawnAudioObjects()
+	{
+		GameObject audioSourcePrefab = Resources.Load<GameObject>("AudioSource");
+		foreach (GameObject obstacle in GameObject.FindGameObjectsWithTag("Obstacle"))
+		{
+			if (obstacle.GetComponentInChildren<AudioSource>()) continue;
+			GameObject audioSource = Instantiate(audioSourcePrefab, obstacle.transform.position, Quaternion.identity);
+			audioSource.transform.parent = obstacle.transform;
 		}
 	}
 
