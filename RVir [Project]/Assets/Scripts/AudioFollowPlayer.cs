@@ -21,12 +21,12 @@ public class AudioFollowPlayer : MonoBehaviour
 	public void PositionAudioClosestToPlayer()
 	{
 
-		BoxCollider collider = GetComponent<BoxCollider>();
+		Collider collider = GetComponent<Collider>();
 
 		Vector3 bestCandidate = collider.ClosestPoint(playerHead.position);
 		float bestDistance = Vector3.Distance(playerHead.position, bestCandidate);
 
-		List<BoxCollider> childColliders = new List<BoxCollider>(GetComponentsInChildren<BoxCollider>());
+		List<Collider> childColliders = new List<Collider>(GetComponentsInChildren<Collider>());
 
 		foreach (var col in childColliders)
 		{
