@@ -56,7 +56,23 @@ public class ProximityRingManager : MonoBehaviour
 
 	void updateRing(Collider other)
 	{
-		Vector3 closestPoint = other.ClosestPointOnBounds(transform.position);
+		Vector3 closestPoint = other.ClosestPoint(transform.position);
+		float bestDistance = Vector3.Distance(transform.position, closestPoint);
+
+		List<Collider> childColliders = new List<Collider>(other.gameObject.GetComponentsInChildren<Collider>());
+
+		foreach (var col in childColliders)
+		{
+			var candidate = col.ClosestPoint(transform.position);
+			var distance = Vector3.Distance(transform.position, candidate);
+			if (distance < bestDistance)
+			{
+				bestDistance = distance;
+				closestPoint = candidate;
+			}
+
+		}
+
 		Disc disc = rings[other].GetComponent<Disc>();
 
 		closestPoint.y = transform.position.y;
