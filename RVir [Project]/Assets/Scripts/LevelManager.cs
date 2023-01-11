@@ -71,11 +71,16 @@ public class LevelManager : MonoBehaviour
 	private void spawnAudioObjects()
 	{
 		GameObject audioSourcePrefab = Resources.Load<GameObject>("Prefabs/AudioSource");
+		GameObject audioSourceHapticPrefab = Resources.Load<GameObject>("Prefabs/AudioSourceHaptic");
 		foreach (GameObject obstacle in GameObject.FindGameObjectsWithTag("Obstacle"))
 		{
+			if (!obstacle.GetComponent<AudioFollowPlayer>()) obstacle.AddComponent<AudioFollowPlayer>();
+			if (!obstacle.GetComponent<HapticObject>()) obstacle.AddComponent<HapticObject>();
 			if (obstacle.GetComponentInChildren<AudioSource>()) continue;
 			GameObject audioSource = Instantiate(audioSourcePrefab, obstacle.transform.position, Quaternion.identity);
 			audioSource.transform.parent = obstacle.transform;
+			GameObject audioSourceHaptic = Instantiate(audioSourceHapticPrefab, obstacle.transform.position, Quaternion.identity);
+			audioSourceHaptic.transform.parent = obstacle.transform;
 		}
 	}
 
