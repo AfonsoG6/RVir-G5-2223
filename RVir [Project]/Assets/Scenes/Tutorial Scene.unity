@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0031312993, g: 0.0061682407, b: 0.014192758, a: 1}
+  m_IndirectSpecularColor: {r: 0.0031312953, g: 0.0061682477, b: 0.014192764, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5945,7 +5945,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 544032444}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: ObjectiveAchieved
         m_Mode: 1
