@@ -111,7 +111,7 @@ public class LevelManager : MonoBehaviour
 			if (spawnPoint.getType() == SpawnPoint.Type.User)
 			{
 				Vector3 spawnPointPosition = spawnPoint.transform.position;
-				spawnPointPosition.y = 1;
+				spawnPointPosition.y = 0f;
 				userSpawnPoints[spawnPoint.getRoom()].Add(spawnPointPosition);
 			}
 			else if (spawnPoint.getType() == SpawnPoint.Type.Objective)
@@ -160,6 +160,7 @@ public class LevelManager : MonoBehaviour
 		GameObject obj = GameObject.Find("Objective");
 		obj.transform.position = objectiveSpawnPoint;
 		obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+		obj.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
 		// Set y rotation of camera to random multiple of 10 degrees
 		transform.GetChild(0).transform.localRotation = Quaternion.Euler(0, Random.Range(0, 36) * 10, 0);
